@@ -12,6 +12,8 @@
 		C93481451ED73597002A136A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93481431ED73597002A136A /* Main.storyboard */; };
 		C93481471ED73597002A136A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93481461ED73597002A136A /* Assets.xcassets */; };
 		C934814A1ED73597002A136A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93481481ED73597002A136A /* LaunchScreen.storyboard */; };
+		C93481521ED735FF002A136A /* WSServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93481511ED735FF002A136A /* WSServiceController.swift */; };
+		C94A88291ED7BFBC00F3ED74 /* WSTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A88281ED7BFBC00F3ED74 /* WSTileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		C93481461ED73597002A136A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C93481491ED73597002A136A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C934814B1ED73597002A136A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C93481511ED735FF002A136A /* WSServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSServiceController.swift; sourceTree = "<group>"; };
+		C94A88281ED7BFBC00F3ED74 /* WSTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WSTileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,11 @@
 				C934813F1ED73597002A136A /* AppDelegate.swift */,
 				C93481411ED73597002A136A /* ViewController.swift */,
 				C93481431ED73597002A136A /* Main.storyboard */,
+				C94A88281ED7BFBC00F3ED74 /* WSTileView.swift */,
 				C93481461ED73597002A136A /* Assets.xcassets */,
 				C93481481ED73597002A136A /* LaunchScreen.storyboard */,
 				C934814B1ED73597002A136A /* Info.plist */,
+				C93481511ED735FF002A136A /* WSServiceController.swift */,
 			);
 			path = WordSearch;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93481421ED73597002A136A /* ViewController.swift in Sources */,
+				C93481521ED735FF002A136A /* WSServiceController.swift in Sources */,
+				C94A88291ED7BFBC00F3ED74 /* WSTileView.swift in Sources */,
 				C93481401ED73597002A136A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +312,7 @@
 				C93481501ED73597002A136A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

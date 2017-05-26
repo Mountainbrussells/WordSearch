@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordSearch/ViewController.swift"
-            timestampString = "517462784.266289"
+            timestampString = "517503270.555022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "setUpPuzzle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordSearch/ViewController.swift"
-            timestampString = "517462784.266289"
+            timestampString = "517503270.555022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "setUpPuzzle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordSearch/ViewController.swift"
-            timestampString = "517462784.266289"
+            timestampString = "517504464.648549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "orientationDidChange()"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "highLightTiles(touches:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

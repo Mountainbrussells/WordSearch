@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let serviceController = WSServiceController()
     var puzzlesArray:Array<String> = []
     var puzzleCounter = 0
+    var tilesArray:[WSTileView] = []
 
     @IBOutlet weak var puzzleView: UIView!
     
@@ -27,12 +28,7 @@ class ViewController: UIViewController {
                 self.puzzleView.translatesAutoresizingMaskIntoConstraints = true
                 self.setUpPuzzle()
             }
-            
         }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.orientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-
-       
     }
     
     func getPuzzleArrayForString(_ puzzleString:String, completion: @escaping (_ gridWidth: Int?, _ gridHeigth: Int?, _ gridLetters:Array<Array<String>>?, _ error: Error?) -> Void){
@@ -66,6 +62,7 @@ class ViewController: UIViewController {
                             let tile = WSTileView(rect, withString:tileLetter)
                             tile.translatesAutoresizingMaskIntoConstraints = true
                             self.puzzleView.addSubview(tile)
+                            self.tilesArray.append(tile)
                             
                             let horizontalConstraint = NSLayoutConstraint(item: tile, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.puzzleView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: CGFloat(xPosition))
                             let verticalConstraint = NSLayoutConstraint(item: tile, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.puzzleView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: CGFloat(yPosition))
@@ -87,28 +84,37 @@ class ViewController: UIViewController {
         }
     }
     
-    func orientationDidChange() {
-       
-    }
-    
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        self.view.layoutIfNeeded()
-    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touches began")
+        self.highLightTiles(touches: touches)
+        super.touchesBegan(touches, with: event)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touches moved")
+        self.highLightTiles(touches: touches)
+        super.touchesBegan(touches, with: event)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touches Ended")
+        // TODO: stop touches until word check handled
+        // TODO: Handle word check
+        
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
-        // Don't forget to add "?" after Set<UITouch>
-        print("touches cancelled")
+    func highLightTiles(touches: Set<NSObject>) {
+        if let touch = touches.first as? UITouch {
+            for tile in tilesArray {
+                let point = touch.location(in: puzzleView)
+                let xPosition = tile.frame.origin.x + tile.frame.size.width * 0.25
+                let yPosition = tile.frame.origin.y + tile.frame.size.height * 0.25
+                let width = tile.frame.size.width / 2.0
+                let height = tile.frame.size.height / 2.0
+                let rect = CGRect(x: xPosition, y: yPosition, width: width, height: height)
+                if (rect.contains(point)) {
+                    tile.backgroundColor = UIColor.white
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -30,17 +30,51 @@
                                     <constraint firstAttribute="height" priority="900" constant="480" id="SEN-Ao-kM0"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number Of Answers:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zub-aN-EVQ">
+                                <rect key="frame" x="185.5" y="39" width="117" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4Q-gS-aAb">
+                                <rect key="frame" x="89.5" y="75" width="56.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translate:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsg-qb-d49">
+                                <rect key="frame" x="89.5" y="39" width="56" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z0-37-eFX">
+                                <rect key="frame" x="237" y="75" width="15" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="k4Q-gS-aAb" firstAttribute="centerX" secondItem="xsg-qb-d49" secondAttribute="centerX" id="0D9-FY-jYV"/>
                             <constraint firstItem="afP-mb-tSj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="121.5" id="25h-PX-U9r"/>
+                            <constraint firstItem="xsg-qb-d49" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="3ye-9q-Xqe"/>
                             <constraint firstItem="afP-mb-tSj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KNc-ct-sRq"/>
+                            <constraint firstItem="Zub-aN-EVQ" firstAttribute="leading" secondItem="xsg-qb-d49" secondAttribute="trailing" constant="40" id="KbR-iw-tSX"/>
+                            <constraint firstItem="9z0-37-eFX" firstAttribute="baseline" secondItem="k4Q-gS-aAb" secondAttribute="baseline" id="Qvv-yq-by9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="afP-mb-tSj" secondAttribute="bottom" constant="20" id="Zg7-uu-3qw"/>
+                            <constraint firstItem="xsg-qb-d49" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="crs-s3-svl"/>
                             <constraint firstItem="afP-mb-tSj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="eAu-Jo-xZb"/>
+                            <constraint firstItem="k4Q-gS-aAb" firstAttribute="top" secondItem="xsg-qb-d49" secondAttribute="bottom" constant="21" id="gzx-Rz-6eH"/>
+                            <constraint firstItem="Zub-aN-EVQ" firstAttribute="baseline" secondItem="xsg-qb-d49" secondAttribute="baseline" id="v8x-TO-rC8"/>
+                            <constraint firstItem="9z0-37-eFX" firstAttribute="centerX" secondItem="Zub-aN-EVQ" secondAttribute="centerX" id="wW7-w6-T90"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="numberOfAnswersLabel" destination="9z0-37-eFX" id="DPD-V5-cnb"/>
                         <outlet property="puzzleView" destination="afP-mb-tSj" id="8cF-vb-U2E"/>
+                        <outlet property="wordLabel" destination="k4Q-gS-aAb" id="vi8-Bw-rNm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

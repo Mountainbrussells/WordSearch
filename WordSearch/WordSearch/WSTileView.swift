@@ -15,7 +15,7 @@ class WSTileView: UILabel {
     
     init(_ frame: CGRect, withString string:String) {
         super.init(frame: frame)
-        
+
         self.text = string
         self.textAlignment = .center
         self.adjustsFontSizeToFitWidth = true

@@ -13,7 +13,6 @@ class WSServiceController: NSObject {
     
     func downloadGrid(completion: @escaping (_ gridArray: Array<String>?, _ error: Error?) -> Void) {
         let url = URL(string: baseURL!)
-        var contentString = ""
         
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)

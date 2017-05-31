@@ -22,7 +22,7 @@ class WSPuzzleController: NSObject {
     var tileFontSize:CGFloat = 0.0
     var puzzleView:UIView?
     
-    init(withArray array:Array<String>) {
+    init(puzzles array:Array<String>) {
         super.init()
         self.puzzlesArray = array
     }
@@ -85,19 +85,13 @@ class WSPuzzleController: NSObject {
                             view.addSubview(tile)
                             self.tilesArray.append(tile)
                             
-                            //                            let horizontalConstraint = NSLayoutConstraint(item: tile, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.puzzleView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: CGFloat(xPosition))
-                            //                            let verticalConstraint = NSLayoutConstraint(item: tile, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.puzzleView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: CGFloat(yPosition))
-                            //                            let widthConstraint = NSLayoutConstraint(item: tile, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: CGFloat(widthOfTiles))
-                            //                            let heightConstraint = NSLayoutConstraint(item: tile, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: CGFloat(heightOfTiles))
-                            //
-                            //                            self.puzzleView.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+                            
                             self.tileFontSize = tile.font.pointSize
                             xPosition = xPosition + widthOfTiles
                         }
                         xPosition = 0.0
                         yPosition = yPosition + heightOfTiles
                     }
-                    view.layoutSubviews()
                     completion()
                 }
                 
@@ -176,5 +170,7 @@ class WSPuzzleController: NSObject {
         puzzleCounter = puzzleCounter + 1
     }
     
-    
+    func isLastPuzzle() -> Bool {
+        return puzzleCounter + 1 > puzzlesArray.count
+    }
 }

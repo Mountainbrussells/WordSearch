@@ -89,10 +89,10 @@ class ViewController: UIViewController {
     func correctAlert() {
         alertViewLabel.text = "That's right!"
         alertView.isHidden = false
-        UIView.animate(withDuration: 1.0, animations: { 
+        UIView.animate(withDuration: 0.5, animations: {
             self.alertView.alpha = 1.0
         }) { (true) in
-            UIView.animate(withDuration: 1.0, delay: 0.5, options: .curveEaseIn, animations: { 
+            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
                 self.alertView.alpha = 0.0
             }, completion: { (true) in
                 // Empty choosen tiles

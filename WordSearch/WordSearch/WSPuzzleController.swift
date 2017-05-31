@@ -81,14 +81,13 @@ class WSPuzzleController: NSObject {
                         for tileLetter in lineArray {
                             let rect = CGRect(x: xPosition, y: yPosition, width: widthOfTiles, height: heightOfTiles)
                             let tile = WSTileView(rect, withString:tileLetter)
-                            tile.translatesAutoresizingMaskIntoConstraints = true
                             view.addSubview(tile)
+
                             self.tilesArray.append(tile)
-                            
-                            
                             self.tileFontSize = tile.font.pointSize
                             xPosition = xPosition + widthOfTiles
                         }
+                        
                         xPosition = 0.0
                         yPosition = yPosition + heightOfTiles
                     }

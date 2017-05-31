@@ -12,7 +12,6 @@ class WSTileView: UILabel {
     
     var sortNumber:Int?
     
-    
     init(_ frame: CGRect, withString string:String) {
         super.init(frame: frame)
 

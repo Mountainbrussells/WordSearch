@@ -93,8 +93,6 @@ class WSPuzzleController: NSObject {
                     }
                     completion()
                 }
-                
-                
             }
         }
     }
@@ -147,6 +145,27 @@ class WSPuzzleController: NSObject {
             }
         }
         return isCorrect
+    }
+    
+    func nextPuzzle(completion: @escaping () -> Void) {
+        resetChoosenTiles()
+        setUpPuzzle(puzzleNumber: puzzleCounter, inView: puzzleView!) { 
+            completion()
+        }
+    }
+    
+    func lastPuzzle(completion: @escaping () -> Void) {
+        resetPuzzleCounter()
+        resetChoosenTiles()
+        setUpPuzzle(puzzleNumber: puzzleCounter, inView: puzzleView!) {
+            completion()
+        }
+    }
+    
+    func wrongAnswer() {
+        unhighlightChosenTiles()
+        resetChoosenTiles()
+        resetOrderNumber()
     }
     
     func resetChoosenTiles() {

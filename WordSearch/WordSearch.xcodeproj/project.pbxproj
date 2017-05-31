@@ -61,16 +61,56 @@
 			isa = PBXGroup;
 			children = (
 				C934813F1ED73597002A136A /* AppDelegate.swift */,
-				C93481411ED73597002A136A /* ViewController.swift */,
-				C94A88281ED7BFBC00F3ED74 /* WSTileView.swift */,
-				C93481431ED73597002A136A /* Main.storyboard */,
-				C93481461ED73597002A136A /* Assets.xcassets */,
-				C93481481ED73597002A136A /* LaunchScreen.storyboard */,
 				C934814B1ED73597002A136A /* Info.plist */,
+				C97491101EDF30BD00434351 /* Assets */,
+				C974910C1EDF305400434351 /* Controllers */,
+				C974910F1EDF309300434351 /* StoryBoards */,
+				C974910E1EDF308100434351 /* Views */,
+				C974910D1EDF306E00434351 /* ViewControllers */,
+			);
+			path = WordSearch;
+			sourceTree = "<group>";
+		};
+		C974910C1EDF305400434351 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				C93481511ED735FF002A136A /* WSServiceController.swift */,
 				C974910A1EDF05B400434351 /* WSPuzzleController.swift */,
 			);
-			path = WordSearch;
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C974910D1EDF306E00434351 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C93481411ED73597002A136A /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C974910E1EDF308100434351 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C94A88281ED7BFBC00F3ED74 /* WSTileView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C974910F1EDF309300434351 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				C93481481ED73597002A136A /* LaunchScreen.storyboard */,
+				C93481431ED73597002A136A /* Main.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		C97491101EDF30BD00434351 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C93481461ED73597002A136A /* Assets.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

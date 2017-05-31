@@ -30,7 +30,4 @@ class WSServiceController: NSObject {
         })
         task.resume()
     }
-    
-    
-    
 }

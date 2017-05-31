@@ -83,7 +83,6 @@ class ViewController: UIViewController {
         } else {
             wrongAlert()
         }
-    
     }
     
     func correctAlert() {
@@ -100,7 +99,6 @@ class ViewController: UIViewController {
                 self.view.isUserInteractionEnabled = true
             })
         }
-        
     }
     
     func nextPuzzleAlert() {
@@ -115,31 +113,27 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.alertView.isHidden = true
                 }
-                self.puzzleController?.resetChoosenTiles()
-                self.puzzleController?.setUpPuzzle(puzzleNumber: (self.puzzleController?.puzzleCounter)!, inView: self.puzzleView, completion: { () -> Void in
+                self.puzzleController?.nextPuzzle {
                     DispatchQueue.main.async {
                         self.numberOfAnswersLabel.text = String(describing: self.puzzleController!.answersCount)
                         self.wordLabel.text = self.puzzleController?.puzzleWord
                         self.view.isUserInteractionEnabled = true
                     }
-                })
+                }
             })
         }
-        
     }
     
     func lastPuzzleAlert() {
         let alert = UIAlertController(title: "All done!", message: "Awesome!", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Start Over", style: UIAlertActionStyle.default, handler: { action in
-            self.puzzleController?.resetPuzzleCounter()
-            self.puzzleController?.resetChoosenTiles()
-            self.puzzleController?.setUpPuzzle(puzzleNumber: (self.puzzleController?.puzzleCounter)!, inView: self.puzzleView, completion: { () -> Void in
+            self.puzzleController?.lastPuzzle {
                 DispatchQueue.main.async {
                     self.numberOfAnswersLabel.text = String(describing: self.puzzleController!.answersCount)
                     self.wordLabel.text = self.puzzleController?.puzzleWord
                     self.view.isUserInteractionEnabled = true
                 }
-            })
+            }
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -153,10 +147,7 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 1.0, delay: 0.5, options: .curveEaseIn, animations: {
                 self.alertView.alpha = 0.0
             }, completion: { (true) in
-                self.puzzleController?.unhighlightChosenTiles()
-                // Empty choosen tiles
-                self.puzzleController?.resetChoosenTiles()
-                self.puzzleController?.resetOrderNumber()
+                self.puzzleController?.wrongAnswer()
                 self.view.isUserInteractionEnabled = true
             })
         }
